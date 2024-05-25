@@ -10,6 +10,7 @@ import Exam from "images/Exam.svg";
 import Certificate from "images/certificate.svg";
 import Book from "images/book.svg";
 import { ReactComponent as SvgDecoratorBlob3 } from "images/svg-decorator-blob-3.svg";
+import { Link } from "react-router-dom";
 
 const Heading = tw(SectionHeading)``;
 const Subheading = tw(SubheadingBase)`text-center mb-3`;
@@ -21,7 +22,7 @@ const Column = styled.div`
   ${tw`lg:w-1/3 max-w-xs`}
 `;
 
-const Card = styled.a`
+const Card = styled(Link)`
   ${tw`flex flex-col items-center text-center h-full mx-4 px-4 py-8 rounded transition-transform duration-300 hover:cursor-pointer transform hover:scale-105 `}
   .imageContainer {
     ${tw`text-center rounded-full p-4 bg-gray-100`}
@@ -56,19 +57,19 @@ export default ({
       imageSrc: Book,
       title: "Comprehensive Course Material",
       description: "Our course materials provide in-depth knowledge and practical insights into GRC.",
-      url: "https://timerse.com"
+      url: "/course"
     },
     {
       imageSrc: Exam,
       title: "Interactive Quizzes and Exams",
       description: "Designed to reinforce learning and assess your understanding of key concepts.",
-      url: "https://google.com"
+      url: "/course"
     },
     {
       imageSrc: Certificate,
       title: "Course Completion Certification",
       description: "Prestigious certificate, validating your expertise and enhancing your professional credentials.",
-      url: "https://reddit.com"
+      url: "/course"
     }
   ],
   linkText = "Learn More",
@@ -94,7 +95,7 @@ export default ({
         <ThreeColumnContainer>
           {cards.map((card, i) => (
             <Column key={i}>
-              <Card href={card.url}>
+              <Card to={card.url}>
                 <span className="imageContainer" css={imageContainerCss}>
                   <img src={card.imageSrc} alt="" css={imageCss} />
                 </span>

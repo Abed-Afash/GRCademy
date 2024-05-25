@@ -14,6 +14,8 @@ import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-1.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/dot-pattern.svg";
 import DesignIllustration from "images/design-illustration.svg";
+import AnimationRevealPage from "helpers/AnimationRevealPage";
+import { Link } from "react-router-dom";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -62,7 +64,7 @@ const Hero = ({
   heading = "Elevate your Career with Expert Training!",
   description="Unlock your potential with our comprehensive GRC (Governance, Risk Management, and Compliance) training course. Earn your certification and stand out in your career, Enroll today and become a trusted expert in GRC.",
   primaryButtonText="Enroll Now",
-  primaryButtonUrl="#",
+  primaryButtonUrl="/Signup",
   watchVideoButtonText="Watch Video",
   watchVideoYoutubeUrl="https://www.youtube.com/embed/_GuOjXYl5ew",
   imageSrc=DesignIllustration,
@@ -74,7 +76,7 @@ const Hero = ({
   const toggleModal = () => setModalIsOpen(!modalIsOpen);
 
   return (
-    <>
+    <AnimationRevealPage>
       <Header />
       <Container>
         <TwoColumn>
@@ -82,7 +84,7 @@ const Hero = ({
             <Heading>{heading}</Heading>
             <Paragraph>{description}</Paragraph>
             <Actions>
-              <PrimaryButton as="a" href={primaryButtonUrl}>{primaryButtonText}</PrimaryButton>
+              <Link to="/Signup"><PrimaryButton>{primaryButtonText}</PrimaryButton></Link>
               <WatchVideoButton onClick={toggleModal}>
                 <span className="playIconContainer">
                   <PlayIcon className="playIcon" />
@@ -118,7 +120,7 @@ const Hero = ({
           </div>
         </StyledModal>
       </Container>
-    </>
+    </AnimationRevealPage>
   );
 };
 

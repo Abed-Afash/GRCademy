@@ -106,7 +106,7 @@ export default ({
   const [activeDurationIndex, setActiveDurationIndex] = useState(0);
 
   return (
-    <Container>
+    <Container id="Pricing">
       <ContentWithPaddingXl>
         <HeaderContainer>
           {subheading && <Subheading>{subheading}</Subheading>}
