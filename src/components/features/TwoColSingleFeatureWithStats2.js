@@ -46,7 +46,7 @@ export default ({
       We have been doing this <wbr /> since <span tw="text-primary-500">2011.</span>
     </>
   ),
-  description = "With over a decades of experience, our GRC training has empowered countless professionals to excel in their careers. Our commitment to excellence and industry relevance has made us a trusted leader in the field.",
+  description = "With over a decade of experience, our GRC training has empowered countless professionals to excel in their careers. Our commitment to excellence and industry relevance has made us a trusted leader in the field.",
   primaryButtonText = "Learn More",
   primaryButtonUrl = "https://timerse.com",
   imageSrc = StatsIllustrationSrc,
