@@ -8,6 +8,7 @@ import Pricing from 'pages/Pricing';
 import Signup from 'pages/Signup';
 import Login from 'pages/Login';
 import ScrollToTop from 'helpers/ScrollToTop';
+import NotFound from 'pages/NotFound';
 function App() {
   return (
     <>
@@ -18,9 +19,10 @@ function App() {
         <Route path="/" element={<LandingPage/>} />
         <Route path="/ContactUs" element={<ContactUs/>} />
         <Route path="/AboutUs" element={<AboutUs/>} />
-        <Route path="Pricing" element={<Pricing/>} />
-        <Route path="Signup" element={<Signup/>}/>
-        <Route path="Login" element={<Login/>}/>
+        <Route path="/Pricing" element={<Pricing/>} />
+        <Route path="/Signup" element={<Signup/>}/>
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
     </>
